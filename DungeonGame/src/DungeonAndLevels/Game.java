@@ -19,7 +19,7 @@ public class Game {
 		System.out.println("Bienvenido a Dungeon And Levels");
 		System.out.println("La cantidad de jugadores permitida es 2 o 3");
         System.out.print("Ingrese la cantidad de jugadores: ");
-        String read = teclado.nextLine();
+        String read = teclado.nextLine(); 
 		switch (read) 
         {
             case "2": p1 = new Player("Player 1") ;

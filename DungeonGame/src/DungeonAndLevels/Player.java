@@ -24,8 +24,8 @@ public class Player {
 		return this.levelPosition;
 	}
 	
-	public void takeLife(int atack) {
-		life = life - atack;
+	public void takeDamage(int Damage) {
+		life = life - Damage;
 	}
 	
 	public String getName() {
