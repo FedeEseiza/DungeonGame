@@ -1,7 +1,7 @@
 package DungeonAndLevels;
 
 public class Player {
-	private int life = 6;
+	private int health = 6;
 	private int armor = 4;
 	private String name;
 	private int levelPosition = 1;
@@ -13,8 +13,8 @@ public class Player {
 	public Player(String name) {
 		this.name = name;
 	}
-	public int getLife() {
-		return life;
+	public int getHealth() {
+		return health;
 	}
 	public int getArmor() {
 		return armor;
@@ -25,7 +25,7 @@ public class Player {
 	}
 	
 	public void takeDamage(int Damage) {
-		life = life - Damage;
+		health = health - Damage;
 	}
 	
 	public String getName() {
