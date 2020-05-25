@@ -12,9 +12,7 @@ public class Game {
 		Scanner teclado = new Scanner(System.in);
 //		System.out.println("¡Hola " + read + "!");
 		Dungeon dungeon = new Dungeon() ;
-		Player p1 = new Player();
-		Player p2 = new Player();
-		Player p3 = new Player();
+		Player p1,p2,p3 ;
 		int throwDice;
 		int i= 0;
 		System.out.println("Bienvenido a Dungeon And Levels");
@@ -22,22 +20,15 @@ public class Game {
         System.out.print("Ingrese la cantidad de jugadores: ");
  //       System.out.print(dungeon.throwDice());
         String read = teclado.nextLine();
-		switch (read) 
-        {
-            case "2": p1 = new Player("Player 1") ;
-            		  p2 = new Player("Player 2") ;
-            		  dungeon.startDungeonWitPlayers(p1, p2);    		
-            		  dungeon.startLevels();
-                     break;
-            case "3":   p1 = new Player("Player 1") ;
-  		  				p2 = new Player("Player 2") ;
-  		  			    p3 = new Player("Player 3") ;
-  		  			    dungeon.startDungeonWitPlayers(p1, p2, p3);
-  		  			    dungeon.startLevels();
-                     break;
-            default: System.out.println("MAAAL");
-            break;         
-        }
+        p1 = new Player("Player 1") ;
+		p2 = new Player("Player 2") ;
+		if(read == "2") {
+			dungeon.startDungeonWitPlayers(p1, p2);
+		}else {
+			p3 = new Player("Player 3");
+			dungeon.startDungeonWitPlayers(p1, p2, p3);
+		}
+		dungeon.startLevels();
 		System.out.println("Comienza el juego");
 		while (dungeon.getActLevel() < 10) {  // Mientras que no terminen de jugar cada player
 				System.out.println("Preciona enter para tirar los dados");
