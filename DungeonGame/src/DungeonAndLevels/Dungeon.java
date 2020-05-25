@@ -1,7 +1,7 @@
 package DungeonAndLevels;
 import DungeonAndLevels.Player;
 public class Dungeon {
-	private String[] levels = new String[20];
+	private Object[] levels = new Object[20];
 	private int actLevel = 1;
 	private Player[] player;
 	
@@ -20,8 +20,8 @@ public class Dungeon {
 	
 	public void startLevels() {
 		this.levels[0] ="Inicio";
-		this.levels[1] ="Te ataco un grupo de orcos, pierdes 2 puntos de vida";
-		this.levels[2] ="Ganas dos puntos de vida";
+		this.levels[1] = new Orcs();
+		this.levels[2] ="Ganas +2 puntos de vida";
 		this.levels[3] ="Encuentras una espada";
 		this.levels[4] ="Encuentras un arco";
 		this.levels[5] ="Aparece el Reaper, pierdes 5 puntos de vida";
@@ -47,8 +47,13 @@ public class Dungeon {
 		return this.player[i];
 	}
 	
-	public String getLevel(int i) {
+	public Object getLevel(int i) {
 		return levels[i];
 	}
+	
+	public int throwDice() {
+		return (int)(Math.random() * 3) + 1;
+	}
+	
 	
 }

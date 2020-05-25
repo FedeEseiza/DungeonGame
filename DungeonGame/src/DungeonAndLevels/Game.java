@@ -16,10 +16,12 @@ public class Game {
 		Player p2 = new Player();
 		Player p3 = new Player();
 		int throwDice;
+		int i= 0;
 		System.out.println("Bienvenido a Dungeon And Levels");
 		System.out.println("La cantidad de jugadores permitida es 2 o 3");
         System.out.print("Ingrese la cantidad de jugadores: ");
-        String read = teclado.nextLine(); 
+ //       System.out.print(dungeon.throwDice());
+        String read = teclado.nextLine();
 		switch (read) 
         {
             case "2": p1 = new Player("Player 1") ;
@@ -37,22 +39,22 @@ public class Game {
             break;         
         }
 		System.out.println("Comienza el juego");
-		while (dungeon.getActLevel() < 10) {
-			
-			for (int i= 0; i < dungeon.playerSize();i++) {
-				throwDice = (int)(Math.random() * 3) + 1;
-				dungeon.getPlayer(i).movePosition(throwDice);
+		while (dungeon.getActLevel() < 10) {  // Mientras que no terminen de jugar cada player
+				System.out.println("Preciona enter para tirar los dados");
+				read = teclado.nextLine();
+				throwDice = (int)(Math.random() * 3) + 1; //Tira el dado 
+				dungeon.getPlayer(i).movePosition(throwDice); //Mueve el player de donde esta mas la posicion que indica el dado
 				if (dungeon.getPlayer(i).getPosition() > dungeon.getActLevel()) {
 					dungeon.setActLevel(dungeon.getPlayer(i).getPosition());
 				}
 				if (dungeon.getActLevel() >= 10 ) {
 					break;
 				}
-				System.out.print(dungeon.getLevel(dungeon.getPlayer(i).getPosition()));
-				read = teclado.nextLine();
+				System.out.print(dungeon.getPlayer(i).getName()+" ");
 				switch (dungeon.getPlayer(i).getPosition()) 
 		        {
-		            case 1 : System.out.println("Te ataco un grupo de orcos, pierdes 2 puntos de vida"); 
+		            case 1 : 
+		            		System.out.println("Te ataco un grupo de orcos, pierdes 2 puntos de vida"); 
 		            		break;
 		            case 2 : System.out.println("Ganas dos puntos de vida");  
 		                     break;
@@ -68,12 +70,13 @@ public class Game {
 	                     break;
 		            case 8 : System.out.println("Te enfrentas a un gigante ");  
 	                     break;
-		            case 9 : System.out.println("Sobreviviste felicitaciones"); 
+		            case 9 : System.out.println("Te enfrentas a una echicera ");
 	                     break;
 		            case 10 :  
 	                     break;     
 		        }
-				if (i == dungeon.playerSize()) {
+				i++;
+				if (i == dungeon.playerSize()) { //Se termina la ronda y se reinicia el contador
 					i = 0;
 				}
 	//			System.out.println(dungeon.getLevel(dungeon.getActLevel()));
@@ -81,10 +84,10 @@ public class Game {
 	//			System.out.println("Estas aca");
 	//			read = teclado.nextLine();
 				
-			}
+			
 			
 		}
-		System.out.println(dungeon.getActLevel());
+		System.out.println("Felicidades" +" "+dungeon.getPlayer(i).getName()+" "+"Sobreviviste, eres el GANADOR!!!");
 		
 		
 	}
