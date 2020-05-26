@@ -1,9 +1,9 @@
 package DungeonAndLevels;
 
 public class Reaper {
-	private int demage;
+	private int damage;
 	
 	public Reaper() {
-		this.demage = 6;
+		this.damage = 6;
 	}
 }

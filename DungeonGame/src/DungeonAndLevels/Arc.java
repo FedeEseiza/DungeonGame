@@ -1,10 +1,10 @@
 package DungeonAndLevels;
 
 public class Arc {
-	private int demage=3;
+	private int damage=3;
 	
 	
 	public int attack() {
-		return this.demage;
+		return this.damage;
 	}
 }
