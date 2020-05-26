@@ -1,13 +1,13 @@
 package DungeonAndLevels;
 
 public class Bonus {
-	private int lifeBonus=2;
-	private int armorBonus=2;
+	protected int lifeBonus=2;
+	protected int armorBonus=2;
 	
-	public int takeLifeBonus(int bonus) {
+	public int takeLifeBonus() {
 		return lifeBonus;
 	}
-	public int takeArmorBonus(int bonus) {
+	public int takeArmorBonus() {
 		return armorBonus;
 	}	
 	

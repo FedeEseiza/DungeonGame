@@ -11,6 +11,7 @@ public class Game {
 //		System.out.println("¡Hola " + read + "!");
 		Dungeon dungeon = new Dungeon() ;
 		Character p1,p2,p3 ;
+		ArmorBonus ar = new ArmorBonus();
 		int i= 0;
 		System.out.println("Bienvenido a Dungeon And Levels");
 		System.out.println("La cantidad de jugadores permitida es 2 o 3");
@@ -38,6 +39,7 @@ public class Game {
 				}
 				System.out.print(dungeon.getPlayer(i).getName()+" ");
 				System.out.println(dungeon.historiaDelNivel(dungeon.getPlayer(i).getPosition())); //Cuenta que sucede en la historia
+				System.out.println(dungeon.myFate(dungeon.getPlayer(i).getPosition()));
 				i++;
 				if (i == dungeon.playerSize()) { //Se termina la ronda y se reinicia el contador
 					i = 0;

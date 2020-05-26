@@ -1,8 +1,10 @@
 package DungeonAndLevels;
 public class Dungeon {
-	private Object[] levels = new Object[20];
+	private String[] levels = new String[20];
 	private int actLevel = 1;
-	private Character[] player;	
+	private Character[] player;
+	private Fate fates = new Fate(); //Clase que contiene un arreglo con Enemigos o Bonus
+	
 	
 	public void startDungeonWitPlayers(Character p1,Character p2) { 
 		player = new Character[2];
@@ -57,6 +59,10 @@ public class Dungeon {
 	
 	public String historiaDelNivel(int i) {
 		return (String) this.levels[i];
+	}
+	
+	public Object myFate(int pos) { // Devuelve el destino del jugador ej: Sword, Orcs, Reaper, etc
+		return fates.myFate(pos);
 	}
 	
 }
