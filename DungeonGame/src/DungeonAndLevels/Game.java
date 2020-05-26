@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import javax.print.attribute.standard.Finishings;
 
-import DungeonAndLevels.Player;
 public class Game {
 
 	public static void main(String[] args) {
@@ -12,7 +11,7 @@ public class Game {
 		Scanner teclado = new Scanner(System.in);
 //		System.out.println("¡Hola " + read + "!");
 		Dungeon dungeon = new Dungeon() ;
-		Player p1,p2,p3 ;
+		Character p1,p2,p3 ;
 		int throwDice;
 		int i= 0;
 		System.out.println("Bienvenido a Dungeon And Levels");
@@ -20,15 +19,14 @@ public class Game {
         System.out.print("Ingrese la cantidad de jugadores: ");
  //       System.out.print(dungeon.throwDice());
         String read = teclado.nextLine();
-        p1 = new Player("Player 1") ;
-		p2 = new Player("Player 2") ;
+        p1 = new Character("Player 1") ;
+		p2 = new Character("Player 2") ;
 		if(read == "2") {
 			dungeon.startDungeonWitPlayers(p1, p2);
 		}else {
-			p3 = new Player("Player 3");
+			p3 = new Character("Player 3");
 			dungeon.startDungeonWitPlayers(p1, p2, p3);
 		}
-		dungeon.startLevels();
 		System.out.println("Comienza el juego");
 		while (dungeon.getActLevel() < 10) {  // Mientras que no terminen de jugar cada player
 				System.out.println("Preciona enter para tirar los dados");
@@ -42,30 +40,7 @@ public class Game {
 					break;
 				}
 				System.out.print(dungeon.getPlayer(i).getName()+" ");
-				switch (dungeon.getPlayer(i).getPosition()) 
-		        {
-		            case 1 : 
-		            		System.out.println("Te ataco un grupo de orcos, pierdes 2 puntos de vida"); 
-		            		break;
-		            case 2 : System.out.println("Ganas dos puntos de vida");  
-		                     break;
-		            case 3 : System.out.println("Encuentras una espada"); 
-	                     break;
-		            case 4 : System.out.println("Encuentras un arco");  
-	                     break;         
-		            case 5 : System.out.println("Aparece el Reaper, pierdes 5 puntos de vida"); 
-	                     break;
-		            case 6 : System.out.println("Aparence un vampiro, te drena 2 puntos de vida");  
-	                     break;
-		            case 7 : System.out.println("Ecuentras una armadura, tu armadura aumenta en +1 "); 
-	                     break;
-		            case 8 : System.out.println("Te enfrentas a un gigante ");  
-	                     break;
-		            case 9 : System.out.println("Te enfrentas a una echicera ");
-	                     break;
-		            case 10 :  
-	                     break;     
-		        }
+				System.out.println(dungeon.historiaDelNivel(dungeon.getPlayer(i).getPosition())); //Cuenta que sucede en la historia
 				i++;
 				if (i == dungeon.playerSize()) { //Se termina la ronda y se reinicia el contador
 					i = 0;
@@ -73,7 +48,7 @@ public class Game {
 	//			System.out.println(dungeon.getLevel(dungeon.getActLevel()));
 	//			System.out.println(dungeon.getPlayer(i).getName());
 	//			System.out.println("Estas aca");
-	//			read = teclado.nextLine();
+	//			read = tecla	do.nextLine();
 				
 			
 			

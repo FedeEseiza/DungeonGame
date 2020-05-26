@@ -1,26 +1,26 @@
 package DungeonAndLevels;
-import DungeonAndLevels.Player;
 public class Dungeon {
 	private Object[] levels = new Object[20];
 	private int actLevel = 1;
-	private Player[] player;
+	private Character[] player;	
 	
-	public void startDungeonWitPlayers(Player p1,Player p2) {
-		player = new Player[2];
+	public void startDungeonWitPlayers(Character p1,Character p2) { 
+		player = new Character[2];
 		this.player[0] = p1; 
 		this.player[1] = p2; 
 	}
 	
-	public void startDungeonWitPlayers(Player p1,Player p2, Player p3) {
-		player = new Player[3];
+	public void startDungeonWitPlayers(Character p1,Character p2, Character p3) { 
+		player = new Character[3];
 		this.player[0] = p1; 
 		this.player[1] = p2; 
 		this.player[2] = p3; 
+		this.startLevels();
 	}
 	
 	public void startLevels() {
 		this.levels[0] ="Inicio";
-		this.levels[1] = new Orcs();
+		this.levels[1] = "Te atacó un grupo de orcos, pierdes 2 puntos de vida"; //new Orcs();
 		this.levels[2] ="Ganas +2 puntos de vida";
 		this.levels[3] ="Encuentras una espada";
 		this.levels[4] ="Encuentras un arco";
@@ -28,7 +28,7 @@ public class Dungeon {
 		this.levels[6] ="Aparence un vampiro, te drena 2 puntos de vida";
 		this.levels[7] ="Ecuentras una armadura, tu armadura aumenta en +1 ";
 		this.levels[8] ="Te enfrentas a un gigante ";
-		this.levels[9] ="Sobreviviste felicitaciones";
+		this.levels[9] ="Te enfrentas a una hechicera";
 	}
 	
 	public void setActLevel(int newLevel) {
@@ -43,7 +43,7 @@ public class Dungeon {
 		return player.length;
 	}
 	
-	public Player getPlayer(int i) {
+	public Character getPlayer(int i) {
 		return this.player[i];
 	}
 	
@@ -55,5 +55,8 @@ public class Dungeon {
 		return (int)(Math.random() * 3) + 1;
 	}
 	
+	public String historiaDelNivel(int i) {
+		return (String) this.levels[i];
+	}
 	
 }
