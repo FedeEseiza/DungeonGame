@@ -1,7 +1,6 @@
 package DungeonAndLevels;
-import 	DungeonAndLevels.Dungeon;
 import java.util.Scanner;
-
+import java.util.Random;
 import javax.print.attribute.standard.Finishings;
 
 public class Game {
@@ -12,7 +11,6 @@ public class Game {
 //		System.out.println("¡Hola " + read + "!");
 		Dungeon dungeon = new Dungeon() ;
 		Character p1,p2,p3 ;
-		int throwDice;
 		int i= 0;
 		System.out.println("Bienvenido a Dungeon And Levels");
 		System.out.println("La cantidad de jugadores permitida es 2 o 3");
@@ -30,9 +28,8 @@ public class Game {
 		System.out.println("Comienza el juego");
 		while (dungeon.getActLevel() < 10) {  // Mientras que no terminen de jugar cada player
 				System.out.println("Preciona enter para tirar los dados");
-				read = teclado.nextLine();
-				throwDice = (int)(Math.random() * 3) + 1; //Tira el dado 
-				dungeon.getPlayer(i).movePosition(throwDice); //Mueve el player de donde esta mas la posicion que indica el dado
+				read = teclado.nextLine(); 
+				dungeon.getPlayer(i).movePosition(throwDice()); //Mueve el player de donde esta mas la posicion que indica el dado
 				if (dungeon.getPlayer(i).getPosition() > dungeon.getActLevel()) {
 					dungeon.setActLevel(dungeon.getPlayer(i).getPosition());
 				}
@@ -56,6 +53,11 @@ public class Game {
 		System.out.println("Felicidades" +" "+dungeon.getPlayer(i).getName()+" "+"Sobreviviste, eres el GANADOR!!!");
 		
 		
+	}
+	
+	private static int throwDice() {
+		Random random = new Random();
+		return (random.nextInt(3) + 1);
 	}
 
 }
