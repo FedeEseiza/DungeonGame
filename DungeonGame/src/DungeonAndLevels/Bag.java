@@ -22,6 +22,14 @@ public class Bag {
 		}
 	}
 	
+	public void addSlots(int amount) {
+		if(this.availableSlots+amount > this.totalSlots) {
+			System.out.println("No se pueden agregar tantos slots. Hay:"+this.availableSlots+" disp. y como maximo Max: "+this.totalSlots);
+		}else {
+			this.availableSlots += amount;
+		}
+	}
+	
 	public void takeObject(Takeable object) {
 		if(freeSlots > 0) {
 			int i = 0;
