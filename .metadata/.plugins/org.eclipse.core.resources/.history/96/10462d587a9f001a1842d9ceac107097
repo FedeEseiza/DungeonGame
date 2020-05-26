@@ -1,0 +1,8 @@
+package DungeonAndLevels;
+
+public class ArmorBonus extends Bonus {
+	
+	public int takeArmor() {
+		return super.takeArmorBonus();
+	}
+}
