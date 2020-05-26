@@ -1,10 +1,12 @@
 package DungeonAndLevels;
 
 public class Sword extends Weapon {
-	private int demage=6;
 	
-
+	public Sword() {
+		this.damage = 6;
+	}
+	
 	public int attack() {
-		return this.demage;
+		return this.damage;
 	}
 }

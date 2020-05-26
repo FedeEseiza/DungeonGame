@@ -1,11 +1,11 @@
 package DungeonAndLevels;
 
 public class Weapon {
-	protected int demage;
+	protected int damage;
 	
 
 	
-	public int getDemage() {
-		return demage;
+	public int getDamage() {
+		return damage;
 	}
 }
