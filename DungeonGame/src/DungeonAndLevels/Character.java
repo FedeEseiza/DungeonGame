@@ -10,7 +10,7 @@ public class Character { //ABSTRACT
 	private String clase; 			//Paladin, Mago, Sourcerer, etc
 	private Bag bag;
 	private int weight; 			// Peso
-	private int levelPosition = 1;
+	private int levelPosition = 0;
 	
 	public Character() {
 		this("Player Default");
