@@ -1,6 +1,6 @@
 package DungeonAndLevels;
 
 public class Enemy {
-	private int life;
-	private int armor;
+	protected int life;
+	protected int armor;
 }
