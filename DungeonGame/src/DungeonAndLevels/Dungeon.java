@@ -67,9 +67,9 @@ public class Dungeon {
 	public boolean allDeath() {
 		boolean b = false;
 		for(int i=0 ; i<this.playerSize() ; i++) {
-			b = b || !player[i].isAlive();
+			b = b || player.get(i).isAlive();
 		}
-		return b;
+		return !b;
 	}
 	
 	public Object myFate(int pos) { // Devuelve el destino del jugador ej: Sword, Orcs, Reaper, etc
