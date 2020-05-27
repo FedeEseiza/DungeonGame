@@ -9,4 +9,8 @@ public class Sword extends Weapon {
 	public int attack() {
 		return this.damage;
 	}
+	
+	public void myFateWithThisLevel(Character player) {
+		player.setWeapon(this);;
+	}
 }

@@ -6,4 +6,12 @@ public class Reaper {
 	public Reaper() {
 		this.demage = 6;
 	}
+	
+	public void myFateWithThisLevel(Character player) {
+		attack(player);
+	}
+	
+	public void attack(Character player) {
+		player.takeDamage(this.demage);
+	}
 }

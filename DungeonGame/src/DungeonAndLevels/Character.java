@@ -11,6 +11,7 @@ public class Character { //ABSTRACT
 	private Bag bag;
 	private int weight; 			// Peso
 	private int levelPosition = 0;
+	private Weapon weapon = new Hand();
 	
 	public Character() {
 		this("Player Default");
@@ -47,6 +48,10 @@ public class Character { //ABSTRACT
 		if (this.actualHealth > maxHealth) {
 			this.actualHealth = maxHealth;
 		}
+	}
+	
+	public void setArmor(int amount) {
+		this.armor = this.armor + amount;
 	}
 	
 	public int getActualEnergy() {
@@ -89,6 +94,14 @@ public class Character { //ABSTRACT
 				"clase" + this.clase +"\r\n" +
 				"bag" + this.bag.toString() +"\r\n" +
 				"weight" + this.weight ) ;
+	}
+	
+	public void setWeapon(Weapon weapon) {
+		this.weapon = weapon;
+	}
+	
+	public Weapon getWeapon() {
+		 return this.weapon ;
 	}
 	
 }
