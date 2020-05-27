@@ -10,7 +10,6 @@ public class Character { //ABSTRACT
 	private String clase; 			//Paladin, Mago, Sourcerer, etc
 	private int weight; 			// Peso
 	private int levelPosition = 0;
-	private Weapon weapon = new Weapon();
 	private Weapon hand;
 	
 	public Character() {
