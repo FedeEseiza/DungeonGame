@@ -10,7 +10,7 @@ public class Fate {
 		this.fates[3]=new Sword();
 		this.fates[4]=new Arc();
 		this.fates[5]=new Reaper();
-		this.fates[6]="Vampiro";
+		this.fates[6]=new Vampire();
 		this.fates[7]=new ArmorBonus();
 		this.fates[8]="Inicio";
 		this.fates[9]=new Orcs();
