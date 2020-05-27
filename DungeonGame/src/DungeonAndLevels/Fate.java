@@ -19,4 +19,5 @@ public class Fate {
 	public Object myFate(int pos) {
 		return fates[pos];
 	}
+	
 }
