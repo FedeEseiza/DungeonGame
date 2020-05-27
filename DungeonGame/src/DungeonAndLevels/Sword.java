@@ -13,4 +13,5 @@ public class Sword extends Weapon {
 	public void myFateWithThisLevel(Character player) {
 		player.setWeapon(this);;
 	}
+	
 }
