@@ -21,8 +21,8 @@ public class Character { //ABSTRACT
 		this.name = name;
 		this.maxHealth = 50;
 		this.maxEnergy = 25;
-		this.actualHealth = 50;
-		this.actualEnergy = 25;
+		this.actualHealth = 10;
+		this.actualEnergy = 10;
 		this.armor = 0;
 		this.bag = new Bag();
 	}
@@ -80,6 +80,14 @@ public class Character { //ABSTRACT
 	
 	public void movePosition(int steps) {
 		this.levelPosition = levelPosition + steps;
+	}
+	
+	public String estado() {
+		return "************************"+"\r\n"+
+				"Name:" + this.name +"\r\n" + 
+				"actualHealth" + this.actualHealth +"\r\n"+
+				"actualEnergy" + this.actualEnergy +"\r\n"+
+				"************************";
 	}
 	
 	@Override
