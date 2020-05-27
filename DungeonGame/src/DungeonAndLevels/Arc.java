@@ -5,7 +5,7 @@ public class Arc extends Weapon {
 	
 	
 	public int attack() {
-		return this.demage;
+		return this.damage;
 	}
 	
 	public void myFateWithThisLevel(Character player) {

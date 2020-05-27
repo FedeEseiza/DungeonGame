@@ -24,7 +24,7 @@ public class Dungeon {
 	
 	public void startLevels() {
 		this.levels[0] ="Inicio";
-		this.levels[1] = "Te atacó un grupo de orcos, pierdes 2 puntos de vida"; //new Orcs();
+		this.levels[1] = "Te ataco un grupo de orcos, pierdes 2 puntos de vida"; //new Orcs();
 		this.levels[2] ="Ganas +2 puntos de vida";
 		this.levels[3] ="Encuentras una espada";
 		this.levels[4] ="Encuentras un arco";

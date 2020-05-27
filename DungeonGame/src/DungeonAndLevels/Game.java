@@ -8,7 +8,7 @@ public class Game {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner teclado = new Scanner(System.in);
-//		System.out.println("¡Hola " + read + "!");
+//		System.out.println("Hola " + read + "!");
 		Dungeon dungeon = new Dungeon() ;
 		Character p1,p2,p3 ;
 		ArmorBonus ar = new ArmorBonus();
