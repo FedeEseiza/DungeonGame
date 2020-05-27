@@ -75,7 +75,6 @@ public class Game {
 		//}else {
 		//		System.out.println("MURIERON TODOS PETES.");
 		//}
-		
 		//imprimirEstados(dungeon);
 		
 		

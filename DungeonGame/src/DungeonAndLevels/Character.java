@@ -98,7 +98,7 @@ public class Character { //ABSTRACT
 				"actualArmor: " + this.armor +"\r\n"+
 				"************************";
 		}else {
-			st = this.name + " est� muerto.";
+			st = this.name + " esta muerto.";
 		}
 		return st;
 	}
