@@ -5,6 +5,9 @@ public class Dungeon {
 	private Character[] player;
 	private Fate fates = new Fate(); //Clase que contiene un arreglo con Enemigos o Bonus
 	
+	public Dungeon() {
+		this.startLevels();
+	}
 	
 	public void startDungeonWitPlayers(Character p1,Character p2) { 
 		player = new Character[2];
@@ -17,7 +20,6 @@ public class Dungeon {
 		this.player[0] = p1; 
 		this.player[1] = p2; 
 		this.player[2] = p3; 
-		this.startLevels();
 	}
 	
 	public void startLevels() {
