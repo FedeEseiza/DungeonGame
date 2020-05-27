@@ -11,7 +11,7 @@ public class Character { //ABSTRACT
 	private Bag bag;
 	private int weight; 			// Peso
 	private int levelPosition = 0;
-	private Weapon weapon = new Hand();
+	private Weapon hand;
 	
 	public Character() {
 		this("Player Default");
@@ -25,10 +25,6 @@ public class Character { //ABSTRACT
 		this.actualEnergy = 10;
 		this.armor = 0;
 		this.bag = new Bag();
-	}
-	
-	public boolean isAlive() {
-		return (actualHealth > 0) ;
 	}
 	
 	public void takeDamage(double damage) {
@@ -79,15 +75,38 @@ public class Character { //ABSTRACT
 	}
 	
 	public void movePosition(int steps) {
-		this.levelPosition = levelPosition + steps;
+		if(this.actualHealth > 0) {
+			this.levelPosition = levelPosition + steps;
+		}
 	}
 	
+	public void setWeapon(Weapon weapon) {
+		this.hand = weapon;
+	}
+	
+	public Weapon getWeapon() {
+		 return this.hand ;
+	}
+	
+	/*
+	 * Devuelve un string indicado el estado de salud actual del player o si murió.
+	 */
 	public String estado() {
-		return "************************"+"\r\n"+
+		String st = "";
+		if(this.isAlive()) {
+			st = "************************"+"\r\n"+
 				"Name:" + this.name +"\r\n" + 
-				"actualHealth" + this.actualHealth +"\r\n"+
-				"actualEnergy" + this.actualEnergy +"\r\n"+
+				"actualHealth " + this.actualHealth +"		armor: "+this.armor+"\r\n"+
+				"actualEnergy " + this.actualEnergy +"\r\n"+
 				"************************";
+		}else {
+			st = this.name + " está muerto.";
+		}
+		return st;
+	}
+	
+	public boolean isAlive() {
+		return (actualHealth > 0) ;
 	}
 	
 	@Override
@@ -103,13 +122,5 @@ public class Character { //ABSTRACT
 				"bag" + this.bag.toString() +"\r\n" +
 				"weight" + this.weight ) ;
 	}
-	
-	public void setWeapon(Weapon weapon) {
-		this.weapon = weapon;
-	}
-	
-	public Weapon getWeapon() {
-		 return this.weapon ;
-	}
-	
+
 }
