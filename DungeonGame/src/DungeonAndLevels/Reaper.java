@@ -1,10 +1,9 @@
 package DungeonAndLevels;
 
-public class Reaper {
-	private int demage;
+public class Reaper extends Enemy {
 	
 	public Reaper() {
-		this.demage = 6;
+		this.damage = 6;
 	}
 	
 	public void myFateWithThisLevel(Character player) {
@@ -12,6 +11,6 @@ public class Reaper {
 	}
 	
 	public void attack(Character player) {
-		player.takeDamage(this.demage);
+		player.takeDamage(this.damage);
 	}
 }
