@@ -1,7 +1,6 @@
 package DungeonAndLevels;
 import java.util.Scanner;
 import java.util.Random;
-import javax.print.attribute.standard.Finishings;
 
 public class Game {
 
@@ -11,7 +10,6 @@ public class Game {
 //		System.out.println("Hola " + read + "!");
 		Dungeon dungeon = new Dungeon() ;
 		Character p1,p2,p3 ;
-		ArmorBonus ar = new ArmorBonus();
 		int i= 0;
 		System.out.println("Bienvenido a Dungeon And Levels");
 		System.out.println("La cantidad de jugadores permitida es 2 o 3");
@@ -26,7 +24,6 @@ public class Game {
 			p3 = new Character("Player 3");
 			dungeon.startDungeonWitPlayers(p1, p2, p3);
 		}
-		
 		System.out.println("IMPRECION DE ESTADO ACTUAL DE LOS PLAYERS");
 		imprimirEstados(dungeon);
 		System.out.println("Comienza el juego");
@@ -54,7 +51,12 @@ public class Game {
 				i++;
 				if (i == dungeon.playerSize()) { //Se termina la ronda y se reinicia el contador
 					i = 0;
+					//if(dungeon.allDeath()) {
+					//	break;
+					//}
 				}
+				
+				
 	//			System.out.println(dungeon.getLevel(dungeon.getActLevel()));
 	//			System.out.println(dungeon.getPlayer(i).getName());
 	//			System.out.println("Estas aca");
@@ -63,7 +65,18 @@ public class Game {
 			
 			
 		}
+		teclado.close();
 		System.out.println("Felicidades" +" "+dungeon.getPlayer(i).getName()+" "+"Sobreviviste, eres el GANADOR!!!");
+		/*
+		 * ARREGLAR PARA VER QUIEN GANA
+		 */
+		//if(!dungeon.allDeath()) {
+		//		System.out.println("Felicidades" +" "+dungeon.getPlayer(i).getName()+" "+"Sobreviviste, eres el GANADOR!!!");
+		//}else {
+		//		System.out.println("MURIERON TODOS PETES.");
+		//}
+		
+		//imprimirEstados(dungeon);
 		
 		
 	}
@@ -73,8 +86,6 @@ public class Game {
 			System.out.println(dungeon.getPlayer(i).estado());
 		}
 	}
-	
-	
 	
 	private static int throwDice() {
 		Random random = new Random();

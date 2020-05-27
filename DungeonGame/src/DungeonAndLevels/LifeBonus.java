@@ -1,15 +1,20 @@
 package DungeonAndLevels;
 
 public class LifeBonus extends Bonus {
-	private double lifeBonus;
+
 	public LifeBonus() {
-		this.lifeBonus = 2;
+		this.amount = 2;
 	}
 	public double takeLifeBonus() {
-		return lifeBonus;
+		return amount;
 	}
 	
 	public void myFateWithThisLevel(Character player) {
+		this.consume(player);
+	}
+	
+	public void consume(Character player) {
 		player.heal(takeLifeBonus());
+		
 	}
 }

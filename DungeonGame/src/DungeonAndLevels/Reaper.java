@@ -3,7 +3,7 @@ package DungeonAndLevels;
 public class Reaper extends Enemy {
 	
 	public Reaper() {
-		this.damage = 6;
+		this.damage = 5;
 	}
 	
 	public void myFateWithThisLevel(Character player) {

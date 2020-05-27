@@ -1,17 +1,20 @@
 package DungeonAndLevels;
 
 public class ArmorBonus extends Bonus {
-	private int armorBonus;
 	
 	public ArmorBonus() {
-		this.armorBonus = 4;
+		this.amount = 4;
 	}
-	public int takeArmorBonus() {
-		return armorBonus;
+	public int getAmount() {
+		return amount;
 	}
 	
 	public void myFateWithThisLevel(Character player) {
-		player.setArmor(takeArmorBonus());
+		this.consume(player);
+	}
+	
+	public void consume(Character player) {
+		player.setArmor(amount);
 	}
 
 }
