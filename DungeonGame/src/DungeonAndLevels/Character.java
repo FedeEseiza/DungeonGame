@@ -8,7 +8,6 @@ public class Character { //ABSTRACT
 	private int maxEnergy;
 	private int armor; 			//Max armor 100 whith every Character 
 	private String clase; 			//Paladin, Mago, Sourcerer, etc
-	private Bag bag;
 	private int weight; 			// Peso
 	private int levelPosition = 0;
 	private Weapon hand;
@@ -24,7 +23,6 @@ public class Character { //ABSTRACT
 		this.actualHealth = 10;
 		this.actualEnergy = 10;
 		this.armor = 0;
-		this.bag = new Bag();
 	}
 	
 	public void takeDamage(double damage) {
@@ -119,7 +117,6 @@ public class Character { //ABSTRACT
 				"maxEnergy" + this.maxEnergy +"\r\n" +
 				"armor" + this.armor +"\r\n" +
 				"clase" + this.clase +"\r\n" +
-				"bag" + this.bag.toString() +"\r\n" +
 				"weight" + this.weight ) ;
 	}
 
