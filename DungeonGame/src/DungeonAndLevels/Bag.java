@@ -3,7 +3,7 @@ public class Bag {
 	private int totalSlots = 20;
 	private int availableSlots = 10;
 	private int freeSlots = 10;
-	private Takeable[][] bag; // = new Takeable[4][5];
+	private Takeable[][] bag;  // = new Takeable[4][5];
 	
 	/*
 	AVAILABLE = O
