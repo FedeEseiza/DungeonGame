@@ -85,8 +85,8 @@ public class Character { //ABSTRACT
 	public String estado() {
 		return "************************"+"\r\n"+
 				"Name:" + this.name +"\r\n" + 
-				"actualHealth" + this.actualHealth +"\r\n"+
-				"actualEnergy" + this.actualEnergy +"\r\n"+
+				"actualHealth: " + this.actualHealth +"\r\n"+
+				"actualArmor: " + this.armor +"\r\n"+
 				"************************";
 	}
 	

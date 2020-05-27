@@ -42,11 +42,7 @@ public class Game {
 				}
 				System.out.print(dungeon.getPlayer(i).getName()+" ");
 				System.out.println(dungeon.historiaDelNivel(dungeon.getPlayer(i).getPosition())); //Cuenta que sucede en la historia
-				System.out.println(dungeon.myFate(dungeon.getPlayer(i).getPosition())); //Verifico el objeto que devuelve
-				
-				
-				
-			
+				System.out.println(dungeon.myFate(dungeon.getPlayer(i).getPosition())); //Verifico el objeto que devuelve	
 				if(dungeon.myFate(dungeon.getPlayer(i).getPosition()) instanceof Enemy) {
 					((Enemy) (dungeon.myFate(dungeon.getPlayer(i).getPosition()))).myFateWithThisLevel(dungeon.getPlayer(i));
 				}else if(dungeon.myFate(dungeon.getPlayer(i).getPosition()) instanceof Bonus) {
