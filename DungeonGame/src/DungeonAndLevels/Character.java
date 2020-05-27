@@ -11,7 +11,7 @@ public class Character { //ABSTRACT
 	private Bag bag;
 	private int weight; 			// Peso
 	private int levelPosition = 0;
-	private Weapon weapon = new Hand();
+	private Weapon weapon = new Weapon();
 	
 	public Character() {
 		this("Player Default");
