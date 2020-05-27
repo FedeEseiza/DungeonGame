@@ -1,6 +1,7 @@
 package DungeonAndLevels;
 
 public abstract class Enemy {
+	protected String name;
 	protected int life;
 	protected int armor;
 	protected int damage;
@@ -11,6 +12,11 @@ public abstract class Enemy {
 	
 	public void attack(Character player) {
 		player.takeDamage(this.damage);
+	}
+	
+	@Override
+	public String toString() {
+		return (this.name+"\t damage: "+this.damage);
 	}
 	
 }
