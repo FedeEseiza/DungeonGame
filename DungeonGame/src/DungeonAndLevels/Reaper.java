@@ -3,6 +3,7 @@ package DungeonAndLevels;
 public class Reaper extends Enemy {
 	
 	public Reaper() {
+		this.name = "Reaper";
 		this.damage = 5;
 	}
 	

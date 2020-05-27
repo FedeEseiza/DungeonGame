@@ -3,6 +3,7 @@ package DungeonAndLevels;
 public class Arc extends Weapon {
 	
 	public Arc() {
+		this.name = "Arc";
 		this.damage = 3;
 	}
 	

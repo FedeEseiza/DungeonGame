@@ -3,6 +3,7 @@ package DungeonAndLevels;
 public class ArmorBonus extends Bonus {
 	
 	public ArmorBonus() {
+		this.name = "Armor Bonus";
 		this.amount = 4;
 	}
 	public int getAmount() {

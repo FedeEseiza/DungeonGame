@@ -3,6 +3,7 @@ package DungeonAndLevels;
 public class LifeBonus extends Bonus {
 
 	public LifeBonus() {
+		this.name = "Life Bonus";
 		this.amount = 2;
 	}
 	public double takeLifeBonus() {
